@@ -72,8 +72,10 @@ export class UI {
 
       // contenido del <li> con texto y bótones
       li.innerHTML = `
-        <span class="${task.completado ? 'text-decoration-line-through' : ''}">${task.text}</span>
-        <p style="font-size:11px" class="mx-auto text-center" > ${task.fechaCreacion} </p>
+        <div>
+          <span class="${task.completado ? 'text-decoration-line-through' : ''}">${task.text} </span>
+          <p style="font-size:11px;" class="mx-auto text-center" >Creado en: ${task.fechaCreacion} </p>
+        </div>
         <div>
           <button class="btn btn-warning btn-sm">Editar</button>
           <button class="btn btn-danger btn-sm">Eliminar</button>
@@ -125,8 +127,8 @@ export class UI {
   }
 
   contadores() {
-    this.cantTotal.textContent = `Total: ${this.taskManager.contadorTodasTareas()}`;
-    this.cantCompletadas.textContent = `Completadas ${this.taskManager.contadorTareasCompletadas()}`;
-    this.cantPendientes.textContent = `Pendientes: ${this.taskManager.contadorTareasPendientes()}`;
+    this.cantTotal.innerHTML = `<span class="negrilla">Total: </span> ${this.taskManager.contadorTodasTareas()}`;
+    this.cantCompletadas.innerHTML = `<span class="negrilla">Completadas: </span> ${this.taskManager.contadorTareasCompletadas()}`;
+    this.cantPendientes.innerHTML = `<span class="negrilla">Pendientes: </span> ${this.taskManager.contadorTareasPendientes()}`;
   }
 }

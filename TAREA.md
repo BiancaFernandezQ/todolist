@@ -9,7 +9,7 @@ Filtrar mediante una lista
 - Mostrar solo pendientes
 - Mostrar solo completados
 
-## 3. Ordenar alfabéticamente
+## 3. Ordenar alfabéticamente - LISTO
 Botón: Ordenar tareas de la A-Z
 
 ## 4. Contador - LISTO
