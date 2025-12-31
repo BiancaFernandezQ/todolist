@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div class="container mt-4">
+    <header>
+      <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <img src="./img/task.png" alt="Logo" width="45" height="50" class="d-inline-block align-text-top">
+          <h1 class="align-text-top mx-auto text-center">Lista de tareas "BiTask"</h1>
+        </div>
+      </nav>
+    </header>
+
+    <p class="mt-2 fs-8">
+      Lista de tareas creada con JavaScript, Bootstrap y Local Storage, esta aplicacion te permite agregar tareas por
+      prioridad (alta, media y baja), marcar tareas como completadas, editar y eliminar tareas
+    </p>
+
+    <div class="card p-4">
+      <div class="mb-3">
+        <input type="text" id="taskInput" class="form-control" placeholder="Ingrese una tarea y presione Enter">
+      </div>
+      <button id="addBtn" class="btn btn-primary mb-3">
+        Agregar Tarea
+      </button>
+      <div class="contadores mb-2">
+        <span id="cantTotal" class="me-3"> </span>
+        <span id="cantCompletadas" class="me-3"> </span>
+        <span id="cantPendientes"> </span>
+      </div>
+      <div class="filtros mb-3" style="display: flex; gap: 10px;">
+        <!-- boton desplegable para Filtro por prioridad alta media o baja-->
+        <div>
+          <button id="ordenarAZ" class="btn btn-primary">Ordenar A-Z</button>
+        </div>
+
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Prioridad
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Alta</a></li>
+            <li><a class="dropdown-item" href="#">Media</a></li>
+            <li><a class="dropdown-item" href="#">Baja</a></li>
+          </ul>
+        </div>
+
+        <!--Filtro por completado o pendiente o todo-->
+        <div>
+          <button id="todasTareas" class="btn btn-outline-primary"> Todo </button>
+          <button id="completadosTareas" class="btn btn-outline-success"> Completado </button>
+          <button id="pendientesTareas" class="btn btn-outline-danger"> Pendiente </button>
+        </div>
+      </div>
+      <ul id="taskList" class="list-group"></ul>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"></script>
+  <script type="module" src="./main.js"></script>
+
+</body>
+
+</html>
