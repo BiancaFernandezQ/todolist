@@ -67,29 +67,29 @@ export class UI {
     }
 
     tareas.forEach((task) => {
-      const li = document.createElement('li');
-      li.className = 'list-group-item d-flex justify-content-between align-item-center';
-
-      // contenido del <li> con texto y bótones
-      li.innerHTML = `
-        <div>
-          <span class="${task.completado ? 'text-decoration-line-through' : ''}">${task.text} </span>
-          <p style="font-size:11px;" class="mx-auto text-center" >Creado en: ${task.fechaCreacion} </p>
-        </div>
-        <div>
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>
+          <span class="${task.completado ? 'text-decoration-line-through' : ''}">${task.text}</span>
+          <p style="font-size:11px;" class="mb-0 text-muted">Creado en: ${task.fechaCreacion}</p>
+        </td>
+        <td>
+          <span class="badge ${task.completado ? 'text-bg-success': 'text-bg-danger'}"> ${task.completado ? 'Completo😁' : 'Incompleto☹️'}</span>
+        </td>
+        <td>
           <button class="btn btn-warning btn-sm">Editar</button>
           <button class="btn btn-danger btn-sm">Eliminar</button>
           <button class="btn btn-success btn-sm">${task.completado == true ? 'Desmarcar' : 'Completar'}</button>
-        </div>
+        </td>
       `;
 
       // Eventos de los botones Editar y Eliminar
-      li.querySelector('.btn-warning').onclick = () => this.startEdit(task.id);
-      li.querySelector('.btn-danger').onclick = () => this.deleteTask(task.id);
-      li.querySelector('.btn-success').onclick = () => this.estadoTarea(task.id);
+      tr.querySelector('.btn-warning').onclick = () => this.startEdit(task.id);
+      tr.querySelector('.btn-danger').onclick = () => this.deleteTask(task.id);
+      tr.querySelector('.btn-success').onclick = () => this.estadoTarea(task.id);
 
-      // Añadir al <li> a la lista
-      this.list.appendChild(li);
+      // Añadir la fila a la tabla
+      this.list.appendChild(tr);
     });
   }
 

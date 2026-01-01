@@ -25,7 +25,7 @@ export class TaskManager {
       id: Date.now(),
       text,
       completado: false,
-      fechaCreacion: new Date().toLocaleDateString(),
+      fechaCreacion: new Date().toLocaleString(),
     };
     this.tasks.push(newTask); // Añadir la nueva tarea al array
     this.save();

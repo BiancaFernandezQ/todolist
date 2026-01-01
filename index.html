@@ -51,7 +51,16 @@
           <button id="pendientesTareas" class="btn btn-outline-danger"> Pendiente </button>
         </div>
       </div>
-      <ul id="taskList" class="list-group"></ul>
+      <table class="table table-striped table-hover table-bordered">
+        <thead class="table-light">
+          <tr>
+            <th>TAREA</th>
+            <th>ESTADO</th>
+            <th>ACIONES</th>
+          </tr>
+        </thead>
+        <tbody id="taskList"></tbody>
+      </table>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
